@@ -21,10 +21,10 @@ const App = {
         toUpperCase(item) {
             return item.toUpperCase()
         },
-        doubleCount() {
+        /*doubleCount() {
             console.log('doubleCount');
             return this.notes.length * 2
-        },
+        },*/
         /*inputKeyPress(e) {
             if (e.key === 'Enter') {
                 this.addNewNote()
@@ -39,6 +39,14 @@ const App = {
             console.log('doubleCountComputed');
             return this.notes.length * 2
         },
+    },
+    watch: {
+        inputValue(value) {
+            if(value.length > 10) {
+                this.inputValue = ''
+            }
+            console.log("value", value);
+        }
     }
 }
 
