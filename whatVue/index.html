@@ -6,10 +6,19 @@
     <title>What Vue</title>
     <link rel="stylesheet" href="theme.css" />
   </head>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
   <body>
-    <div class="container pt-5" id="app">
+    <div class="container pt-5" id="app" v-cloak>
       <div class="card center">
-        <h1>{{ title }}</h1>
+        <div v-html="myHtml"></div>
+        <h2 v-text='title'></h2>
+        <h2 v-once>{{ title }}</h2>
+        <h2 v-pre>{{ title }}</h2>
+        <button class="btn" @click="title = 'Теперь я сок'">Изменить название</button>
       </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
