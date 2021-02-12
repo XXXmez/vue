@@ -21,6 +21,10 @@ const App = {
         toUpperCase(item) {
             return item.toUpperCase()
         },
+        doubleCount() {
+            console.log('doubleCount');
+            return this.notes.length * 2
+        },
         /*inputKeyPress(e) {
             if (e.key === 'Enter') {
                 this.addNewNote()
@@ -30,6 +34,12 @@ const App = {
             this.notes.splice(idx, 1);
         }
     },
+    computed: {
+        doubleCountComputed() {
+            console.log('doubleCountComputed');
+            return this.notes.length * 2
+        },
+    }
 }
 
 
