@@ -21,12 +21,13 @@
         </div>
         <button class="btn" v-on:click='addNewNote'>Добавить</button>
         <hr />
-        <ul class="list">
+        <ul class="list" v-if='notes.length !== 0'>
           <li class="list-item" v-for='(note, idx) in notes'>
             ({{ idx + 1 }}) {{ note }}
             <button class="btn danger" v-on:click="removeNote(idx)">Удалить</button>
           </li>
         </ul>
+        <div v-else-if="notes.length === 0"> Заметок пока нет</div>
       </div>
     </div>
 
