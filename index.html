@@ -9,7 +9,10 @@
   <body>
     <div class="container pt-5" id="app">
       <div class="card">
-        <h1>{{ title }}</h1>
+        <h1 :style = '{
+          color: inputValue.length < 5 ? "red" : "yellow",
+          fontSize: inputValue.length < 5 ? "20px" : "30px"
+        }'>{{ title }}</h1>
         <div class="form-control">
           <input
             type="text"
