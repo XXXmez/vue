@@ -7,6 +7,7 @@ const app = Vue.createApp({
     },
     methods: {
         changeTitle() {
+            console.log(this);
             this.title = 'Изменили!'
         }
     },
@@ -30,3 +31,20 @@ const app = Vue.createApp({
 })
 
 app.mount('#app')
+
+
+const date = {
+    title: 'Vue 3',
+    message: 'Заголовок это: Vue 3'
+}
+const proxy = new Proxy(date, {
+    set(target, key, value) {
+        if (key === 'title') {
+            target.message = 'Заголовок это: ' + value
+        }
+        target[key] = value
+    }
+})
+
+proxy.title = 'React'
+console.log(proxy);
