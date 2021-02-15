@@ -28,10 +28,37 @@ const app = Vue.createApp({
             }, 'Изменить')
         ])
     },
+    beforeCreate() {
+        console.log('beforeCreate');
+    },
+    created() {
+        console.log('created');
+    },
+    beforeMount() {
+        console.log('beforeMount');
+    },
+    mounted() {
+        console.log('mounted');
+    },
+    beforeUnmount() {
+        console.log('beforeUnmount');
+    },
+    unmounted() {
+        console.log('unmounted');
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate');
+    },
+    updated() {
+        console.log('updated');
+    },
 })
 
 app.mount('#app')
 
+/*setTimeout(() => {
+    app.unmount()
+}, 2000)*/
 
 const date = {
     title: 'Vue 3',
@@ -47,4 +74,4 @@ const proxy = new Proxy(date, {
 })
 
 proxy.title = 'React'
-console.log(proxy);
+//console.log(proxy);
