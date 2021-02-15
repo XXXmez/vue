@@ -24,8 +24,10 @@
           class="list-item" 
           v-for='(item, i) in items'
           @click="items.splice(i, 1)"
+          :key="item"
         >
-            <strong>{{ item }}</strong>
+            <strong>{{ item }}</strong>&nbsp;
+            <input type="text" @click.prevent.stop>
           </li>
           <!-- <li class="list-item" v-for="(value, key) in person">
             <strong>{{ key }}</strong>{{ value }}
