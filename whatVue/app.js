@@ -20,6 +20,12 @@ Vue.createApp({
             this.items.unshift(this.$refs.myInput.value)
             this.$refs.myInput.value = ''
             console.log(event.key);
+        },
+        remove(i) {
+            this.items.splice(i, 1);
+        },
+        log(item) {
+            console.log("Log: ", item);
         }
     },
     computed: {
