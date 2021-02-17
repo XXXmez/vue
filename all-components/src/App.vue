@@ -2,6 +2,7 @@
   <div class="container pt-1">
     <div class="card">
       <h2>Актуальные новости {{ now }}</h2>
+      <span>Открыто: {{ openRate }}</span>
     </div>
     <app-news
       v-for='item in news'
@@ -19,7 +20,7 @@ export default {
   data() {
     return {
       now: new Date().toLocaleDateString(),
-      isOpen: false,
+      openRate: 0,
       news: [
         {
           title: 'Мы наконец-то запустили Vue',
