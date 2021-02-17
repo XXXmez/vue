@@ -5,8 +5,10 @@
     </div>
     <app-news
       v-for='item in news'
-      :key='item'
-      v-bind:title='item'
+      :key='item.id'
+      v-bind:title='item.title'
+      :id='item.id'
+      :is-open='item.isOpen'
     ></app-news>
   </div>
 </template>
@@ -19,9 +21,21 @@ export default {
       now: new Date().toLocaleDateString(),
       isOpen: false,
       news: [
-        'Мы наконец-то запустили Vue',
-        'Vue 3 успешно работает',
-        'В данный момент проблем не обнаруженно!'
+        {
+          title: 'Мы наконец-то запустили Vue',
+          id: 1,
+          isOpen: false
+        },
+        {
+          title: 'Vue 3 успешно работает',
+          id: 2,
+          isOpen: false
+        },
+        {
+          title: 'В данный момент проблем не обнаруженно!',
+          id: 3,
+          isOpen: false
+        }
       ]
     }
   },
