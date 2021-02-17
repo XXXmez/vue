@@ -3,8 +3,11 @@
     <div class="card">
       <h2>Актуальные новости {{ now }}</h2>
     </div>
-    <app-news></app-news>
-    <AppNews />
+    <app-news
+      v-for='item in news'
+      :key='item'
+      v-bind:title='item'
+    ></app-news>
   </div>
 </template>
 
