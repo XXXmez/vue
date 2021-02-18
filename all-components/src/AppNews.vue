@@ -29,6 +29,10 @@ export default {
             }
         }
     },
+    //emits: ['open-news'],
+    emits: {
+        'open-news': null
+    },
     data() {
         return {
             isNewsOpen: this.isOpen
