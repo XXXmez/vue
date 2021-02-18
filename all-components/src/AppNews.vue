@@ -1,8 +1,10 @@
 <template>
     <div class="card">
       <h3>{{ title }}</h3>
-      <button class="btn" @click='open'>Открыть</button>
-      <p v-if='isOpen'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt eligendi aliquam numquam cum perferendis, dolorum amet delectus voluptate. Autem, accusamus.</p>
+      <button class="btn" @click='open'>
+          {{ isNewsOpen ? 'Закрыть' : 'Открыть' }}
+      </button>
+      <p v-if='isNewsOpen'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt eligendi aliquam numquam cum perferendis, dolorum amet delectus voluptate. Autem, accusamus.</p>
     </div>
 </template>
 
@@ -29,13 +31,15 @@ export default {
     },
     data() {
         return {
-            //item: 'Item string',
-            //isOpen: false
+            isNewsOpen: this.isOpen
         }
     },
     methods: {
         open() {
-            this.isOpen = !this.isOpen //3.40
+            this.isNewsOpen = !this.isNewsOpen
+            if(this.isNewsOpen) {
+                this.$emit('open-news')
+            }
         }
     }
 }

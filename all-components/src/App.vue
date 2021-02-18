@@ -10,6 +10,7 @@
       v-bind:title='item.title'
       :id='item.id'
       :is-open='item.isOpen'
+      @open-news='openNews'
     ></app-news>
   </div>
 </template>
@@ -38,6 +39,11 @@ export default {
           isOpen: false
         }
       ]
+    }
+  },
+  methods: {
+    openNews () {
+      this.openRate++
     }
   },
   components: {
